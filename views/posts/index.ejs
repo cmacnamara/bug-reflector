@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section class="main-content">
+  <div class="content-card">
+    <a href="/posts/new" id="create-post-container">
+      <div class="new-post-link">Create a post</div>
+    </a>
+  </div>
+  <ul>
+    <% posts.forEach(post => { %>
+      <li class="content-card">
+        <h3>Posted by <%= post.owner %> on <%= post.createdAt.toLocaleDateString() %></h3>
+        <h3><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
+        <h2><%= post.summary %></h2>
+        <ul>
+          <% post.technologies.forEach(technology => { %>
+           <li><img src="<%= technology %>" alt="<%= technology %>"></li>
+          <% }) %>
+        </ul>
+      </li>
+    <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>

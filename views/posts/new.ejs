@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section class="main-content">
+  <div class="content-card">
+    <form id="new-post-form" action="/posts" method="POST">
+      <input type="text" name="summary" placeholder="Summary">
+      <textarea name="mainContent" class="text-area" cols="30" rows="5" placeholder="Describe your bug"></textarea>
+      <p style="margin: 0;">Did you fix your bug?: <input type="checkbox" name="resolved"></p> 
+      <textarea name="reflection" class="text-area" cols="30" rows="5" placeholder="What did you learn from this bug?"></textarea>
+      <fieldset>      
+        <legend>Related Technologies</legend>      
+        <input type="checkbox" name="technolgies" value="JavaScript">JavaScript<br>      
+        <input type="checkbox" name="technolgies" value="HTML">HTML<br>      
+        <input type="checkbox" name="technolgies" value="CSS">CSS<br>      
+        <br>          
+    </fieldset> 
+      <button type="submit" >Create Post</button>
+    </form>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
