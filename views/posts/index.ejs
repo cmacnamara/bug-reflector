@@ -7,20 +7,26 @@
       <div class="new-post-link">Create a post</div>
     </a>
   </div>
-  <ul>
-    <% posts.forEach(post => { %>
-      <li class="content-card">
+  <% posts.forEach(post => { %>
+    <div class="content-card">
+      <div class="post-headline">
         <h3>Posted by <%= post.owner %> on <%= post.createdAt.toLocaleDateString() %></h3>
-        <h3><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
-        <h2><%= post.summary %></h2>
-        <ul>
+        <div class="post-actions">
+          <button>Delete</button>
+          <button>Edit</button>
+        </div>
+      </div>
+      <h3><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
+      <h2><%= post.summary %></h2>
+      <% if (post.technologies) { %>
+        <ul id="tech-list">
           <% post.technologies.forEach(technology => { %>
-           <li><img src="<%= technology %>" alt="<%= technology %>"></li>
+            <li><img src="<%= technology %>" alt="<%= technology %>"></li>
           <% }) %>
         </ul>
-      </li>
-    <% }) %>
-  </ul>
+      <% } %>
+    </div>
+  <% }) %>
 </section>
 
 <%- include('../partials/footer') %>

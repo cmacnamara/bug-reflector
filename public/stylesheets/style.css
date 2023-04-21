@@ -114,6 +114,22 @@ main {
   float: left;
 }
 
+#tech-list {
+  display: inline;
+  list-style: none;
+  border: solid pink 2px;
+}
+
+.post-headline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-headline > button {
+  height: 20px;
+}
+
 .right {
   margin-left: auto;
 }
