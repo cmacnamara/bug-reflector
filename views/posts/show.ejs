@@ -13,6 +13,7 @@
     <h3><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
     <h2><%= post.summary %></h2>
     <p><%= post.mainContent %></p>
+    <p><%= post.reflection %></p>
     <% if (post.technologies) { %>
       <p>
       <% post.technologies.forEach(technology => { %>

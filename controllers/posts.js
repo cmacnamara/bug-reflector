@@ -23,7 +23,6 @@ function newPost(req,res) {
 
 function create(req,res) {
   req.body.resolved = !!req.body.resolved;
-  console.log('Req.body', req.body);
   for(let key in req.body) {
     if(req.body[key] === '') delete req.body[key]
   }
@@ -65,10 +64,23 @@ function edit(req,res) {
   })
 }
 
+function update(req,res) {
+  req.body.resolved = !!req.body.resolved;
+  Post.findByIdAndUpdate(req.params.postId, req.body, {new: true})
+  .then(post => {
+    res.redirect(`/posts/${post._id}`)
+  })
+  .catch(err => {
+    console.log(err);
+    res.redirect('/posts');
+  })
+}
+
 export {
   index,
   newPost as new,
   create,
   show,
   edit,
+  update,
 }
