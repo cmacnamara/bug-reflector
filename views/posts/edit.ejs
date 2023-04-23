@@ -8,9 +8,9 @@
       action="/posts/<%= post._id %>?_method=PUT" 
       method="POST">
       <input type="text" name="summary" value="<%= post.summary %>">
-      <textarea name="mainContent" class="text-area" cols="30" rows="5" value="<%= post.mainContent %>"></textarea>
+      <textarea name="mainContent" class="text-area" cols="30" rows="5"><%= post.mainContent %></textarea>
       <p style="margin: 0;">Did you fix your bug?: <input type="checkbox" name="resolved" <%= post.resolved ? 'checked' : ''%>></p> 
-      <textarea name="reflection" class="text-area" cols="30" rows="5" value="<%= post.reflection %>"></textarea>
+      <textarea name="reflection" class="text-area" cols="30" rows="5"><%= post.reflection %></textarea>
       <fieldset>      
         <legend>Related Technologies</legend>      
         <input type="checkbox" name="technologies" value="JavaScript" <%= post.technologies.includes('JavaScript') ? 'checked' : ''%>>JavaScript<br>      
