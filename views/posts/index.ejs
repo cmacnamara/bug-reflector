@@ -17,13 +17,13 @@
         </div>
       </div>
       <h3><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
-      <h2><%= post.summary %></h2>
+      <a href="/posts/<%= post._id %>"><h2><%= post.summary %></h2></a>
       <% if (post.technologies) { %>
-        <ul id="tech-list">
+        <p>
           <% post.technologies.forEach(technology => { %>
-            <li><img src="<%= technology %>" alt="<%= technology %>"></li>
+            <%= technology %>
           <% }) %>
-        </ul>
+        </p>
       <% } %>
     </div>
   <% }) %>

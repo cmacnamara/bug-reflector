@@ -37,8 +37,38 @@ function create(req,res) {
   })
 }
 
+function show(req,res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    res.render('posts/show', {
+      post,
+      title: 'Post Detail'
+    })
+    .catch(err => {
+      console.log(err);
+      res.redirect('/posts');
+    })
+  })
+}
+
+function edit(req,res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    res.render('posts/edit', {
+      title: 'Edit Post',
+      post
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.redirect('/posts');
+  })
+}
+
 export {
   index,
   newPost as new,
-  create
+  create,
+  show,
+  edit,
 }
