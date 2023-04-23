@@ -44,10 +44,10 @@ function show(req,res) {
       post,
       title: 'Post Detail'
     })
-    .catch(err => {
-      console.log(err);
-      res.redirect('/posts');
-    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.redirect('/posts');
   })
 }
 

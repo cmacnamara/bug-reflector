@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section class="main-content">
+  <div class="content-card">
+    <form 
+      id="new-post-form" 
+      action="/posts/<%= post._id %>?_method=PUT" 
+      method="POST">
+      <input type="text" name="summary" value="<%= post.summary %>">
+      <textarea name="mainContent" class="text-area" cols="30" rows="5" value="<%= post.mainContent %>"></textarea>
+      <p style="margin: 0;">Did you fix your bug?: <input type="checkbox" name="resolved" <%= post.resolved ? 'checked' : ''%>></p> 
+      <textarea name="reflection" class="text-area" cols="30" rows="5" value="<%= post.reflection %>"></textarea>
+      <fieldset>      
+        <legend>Related Technologies</legend>      
+        <input type="checkbox" name="technologies" value="JavaScript" <%= post.technologies.includes('JavaScript') ? 'checked' : ''%>>JavaScript<br>      
+        <input type="checkbox" name="technologies" value="HTML" <%= post.technologies.includes('HTML') ? 'checked' : ''%>>HTML<br>      
+        <input type="checkbox" name="technologies" value="CSS" <%= post.technologies.includes('CSS') ? 'checked' : ''%>>CSS<br>      
+        <br>          
+    </fieldset> 
+      <button type="submit">Save Post</button>
+    </form>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

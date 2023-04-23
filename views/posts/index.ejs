@@ -13,7 +13,7 @@
         <h3>Posted by <%= post.owner %> on <%= post.createdAt.toLocaleDateString() %></h3>
         <div class="post-actions">
           <button>Delete</button>
-          <button>Edit</button>
+          <a href="/posts/<%= post._id %>/edit"><button>Edit</button></a>
         </div>
       </div>
       <h3><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
