@@ -13,6 +13,8 @@ router.post('/', isLoggedIn, postsCtrl.create)
 
 router.put('/:postId', isLoggedIn, postsCtrl.update)
 
+router.delete('/:postId', isLoggedIn, postsCtrl.delete)
+
 export {
   router
 }

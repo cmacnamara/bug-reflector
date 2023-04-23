@@ -12,7 +12,9 @@
       <div class="post-headline">
         <h3>Posted by <%= post.owner %> on <%= post.createdAt.toLocaleDateString() %></h3>
         <div class="post-actions">
-          <button>Delete</button>
+          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+          </form>
           <a href="/posts/<%= post._id %>/edit"><button>Edit</button></a>
         </div>
       </div>
