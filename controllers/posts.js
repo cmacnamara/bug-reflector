@@ -175,6 +175,30 @@ function updateComment(req,res) {
   })
 }
 
+function deleteComment(req,res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    const comment = post.comments.id(req.params.commentId)
+    if(post.owner.equals(req.user.profile._id) || comment.owner.equals(req.user.profile._id)) {
+      post.comments.remove({ _id: req.params.commentId})
+      post.save()
+      .then(() => {
+        res.redirect(`/posts/${post._id}`)
+      })
+      .catch(err => {
+        console.log(err);
+        res.redirect(`/posts/${post._id}`);
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    res.redirect(`/posts/${post._id}`);
+  })
+}
+
 export {
   index,
   newPost as new,
@@ -186,4 +210,5 @@ export {
   createComment,
   editComment,
   updateComment,
+  deleteComment,
 }
