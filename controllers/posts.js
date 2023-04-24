@@ -90,9 +90,20 @@ function update(req,res) {
 }
 
 function deletePost(req,res) {
-  Post.findByIdAndDelete(req.params.postId)
-  .then(() => {
-    res.redirect('/posts')
+  Post.findById(req.params.postId)
+  .then(post => {
+    if(post.owner.equals(req.user.profile._id)) {
+      Post.deleteOne({_id: post._id})
+      .then(() => {
+        res.redirect('/posts')
+      })
+      .catch(err => {
+        console.log(err);
+        res.redirect('/posts');
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
   })
   .catch(err => {
     console.log(err);
