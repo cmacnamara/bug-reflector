@@ -6,9 +6,14 @@
   <nav>
     <a href="/posts">Bug Reflector</a>
     <% if (user) { %>
-      <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
-      </a>
+      <div id="nav-buttons">
+        <a href="/profiles/<%= user.profile._id %>" class="right">
+          <button type="submit">My Profile</button>
+        </a>
+        <a href="/auth/logout" class="right">
+          <button type="submit">Logout</button>
+        </a>
+      </div>
     <% } else { %>
       <div 
         id="g_id_onload"
