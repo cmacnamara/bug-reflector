@@ -22,6 +22,7 @@ function newPost(req,res) {
 }
 
 function create(req,res) {
+  req.body.owner = req.user.profile._id
   req.body.resolved = !!req.body.resolved;
   for(let key in req.body) {
     if(req.body[key] === '') delete req.body[key]
@@ -38,6 +39,7 @@ function create(req,res) {
 
 function show(req,res) {
   Post.findById(req.params.postId)
+  .populate('owner')
   .then(post => {
     res.render('posts/show', {
       post,
@@ -65,10 +67,21 @@ function edit(req,res) {
 }
 
 function update(req,res) {
-  req.body.resolved = !!req.body.resolved;
-  Post.findByIdAndUpdate(req.params.postId, req.body, {new: true})
+  Post.findByIdAndUpdate(req.params.postId)
   .then(post => {
-    res.redirect(`/posts/${post._id}`)
+    if(post.owner.equals(req.user.profile._id)) {
+      req.body.resolved = !!req.body.resolved;
+      post.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/posts/${post._id}`)
+      })
+      .catch(err => {
+        console.log(err);
+        res.redirect('/posts');
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
   })
   .catch(err => {
     console.log(err);
