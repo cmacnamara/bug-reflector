@@ -58,7 +58,7 @@ main {
 .content-card {
   background-color: white;
   padding: 8px;
-  border-radius: 8px;
+  border-radius: 4px;
   width: 95%;
   margin-top: 10px;
 }
@@ -129,6 +129,13 @@ main {
 
 .post-headline > button {
   height: 20px;
+}
+
+.post-actions, .comment-headline {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .right {
