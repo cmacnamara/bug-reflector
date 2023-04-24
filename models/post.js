@@ -16,7 +16,7 @@ const postSchema = new Schema({
   resolved: Boolean,
   reflection: String,
   summary: String,
-  comment: [commentSchema],
+  comments: [commentSchema],
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true

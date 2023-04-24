@@ -111,6 +111,26 @@ function deletePost(req,res) {
   })
 }
 
+function createComment(req,res) {
+  req.body.owner = req.user.profile._id
+  Post.findById(req.params.postId)
+  .then(post => {
+    post.comments.push(req.body)
+    post.save()
+    .then(() => {
+      res.redirect(`/posts/${post._id}`)
+    })
+    .catch(err => {
+      console.log(err);
+      res.redirect('/posts');
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.redirect('/posts');
+  })
+}
+
 export {
   index,
   newPost as new,
@@ -119,4 +139,5 @@ export {
   edit,
   update,
   deletePost as delete,
+  createComment,
 }

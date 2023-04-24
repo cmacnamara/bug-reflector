@@ -25,6 +25,11 @@
       <% }) %>
       </p>
     <% } %>
+    <h3>Comment as <%= user?.profile.name %></h3>
+    <form action="/posts/<%= post._id %>/comments" method="POST">
+      <textarea name="content" class="text-area" cols="30" rows="5" placeholder="Leave a comment"></textarea><br>
+      <button type="submit">Add Comment</button>
+    </form>
   </div>
 </section>
 
