@@ -46,7 +46,7 @@
           </form>
           <% } %>
           <% if (comment.owner.equals(user?.profile._id)) { %>
-            <a href="/posts/<%= post._id %>/edit"><button>Edit</button></a>
+            <a href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit"><button>Edit</button></a>
           <% } %>
         </div>
       </div>

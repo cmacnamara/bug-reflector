@@ -1,0 +1,16 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section class="main-content">
+  <div class="content-card">
+    <form 
+      id="new-post-form" 
+      action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT" 
+      method="POST">
+      <textarea name="content" class="text-area" cols="30" rows="5"><%= comment.content %></textarea><br>
+      <button type="submit">Update Comment</button>
+    </form>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
