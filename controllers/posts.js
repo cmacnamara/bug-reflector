@@ -150,6 +150,31 @@ function editComment(req,res) {
   })
 }
 
+function updateComment(req,res) {
+  req.body.edited = true;
+  Post.findById(req.params.postId)
+  .then(post => {
+    const comment = post.comments.id(req.params.commentId)
+    if(comment.owner.equals(req.user.profile._id)) {
+      comment.content = req.body.content
+      post.save()
+      .then(() => {
+        res.redirect(`/posts/${post._id}`)
+      })
+      .catch(err => {
+        console.log(err);
+        res.redirect('/posts');
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    res.redirect('/posts');
+  })
+}
+
 export {
   index,
   newPost as new,
@@ -160,4 +185,5 @@ export {
   deletePost as delete,
   createComment,
   editComment,
+  updateComment,
 }
