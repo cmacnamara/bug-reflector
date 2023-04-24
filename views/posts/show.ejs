@@ -38,7 +38,7 @@
      <hr>
      <% post.comments.forEach(comment => { %>
       <div class="comment-headline">
-        <h4><%= comment.owner.name %> on <%= comment.createdAt.toLocaleDateString() %></h4>
+        <h4><%= comment.owner.name %> on <%= comment.createdAt.toLocaleDateString() %> <span style="font-style: italic;"><%= comment.edited ? '(edited)' : '' %></span></h4>
         <div class="post-actions">
           <% if (post.owner.equals(user?.profile._id) || comment.owner.equals(user?.profile._id)) { %>
           <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
