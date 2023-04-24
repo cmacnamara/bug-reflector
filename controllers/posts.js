@@ -42,7 +42,6 @@ function show(req,res) {
   .populate('owner')
   .populate('comments.owner')
   .then(post => {
-    console.log('Comments', post.comments);
     res.render('posts/show', {
       post,
       title: 'Post Detail'
@@ -115,6 +114,7 @@ function deletePost(req,res) {
 
 function createComment(req,res) {
   req.body.owner = req.user.profile._id
+  req.body.edited = false
   Post.findById(req.params.postId)
   .then(post => {
     post.comments.push(req.body)

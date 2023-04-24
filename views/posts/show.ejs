@@ -25,15 +25,31 @@
       <% }) %>
       </p>
     <% } %>
+    <% if (user) { %>
     <h3>Comment as <%= user?.profile.name %></h3>
     <form action="/posts/<%= post._id %>/comments" method="POST">
       <textarea name="content" class="text-area" cols="30" rows="5" placeholder="Leave a comment"></textarea><br>
       <button type="submit">Add Comment</button>
     </form>
+    <% } else { %>
+      <h3>Log In to leave a comment!</h3>
+      <% } %>
     <% if (post.comments.length) { %>
      <hr>
      <% post.comments.forEach(comment => { %>
-      <h4><%= comment.owner.name %> on <%= comment.createdAt.toLocaleDateString() %></h4>
+      <div class="comment-headline">
+        <h4><%= comment.owner.name %> on <%= comment.createdAt.toLocaleDateString() %></h4>
+        <div class="post-actions">
+          <% if (post.owner.equals(user?.profile._id) || comment.owner.equals(user?.profile._id)) { %>
+          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+          </form>
+          <% } %>
+          <% if (comment.owner.equals(user?.profile._id)) { %>
+            <a href="/posts/<%= post._id %>/edit"><button>Edit</button></a>
+          <% } %>
+        </div>
+      </div>
       <p><%= comment.content %></p>
      <% }) %>
     <% } %>
