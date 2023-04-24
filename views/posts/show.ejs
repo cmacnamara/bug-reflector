@@ -14,7 +14,7 @@
       </div>
       <% } %>
     </div>
-    <h3><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
+    <h3 class="<%= post.resolved ? 'post-resolved' : 'post-unresolved' %>"><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
     <h2><%= post.summary %></h2>
     <p><%= post.mainContent %></p>
     <p><%= post.reflection %></p>

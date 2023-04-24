@@ -39,6 +39,18 @@ main {
   flex-direction: column;
 }
 
+h2 {
+  margin: 8px;
+}
+
+h3 {
+  margin: 8px;
+}
+
+p {
+  margin: 8px;
+}
+
 #main-landing {
   height: 100%;
   gap: 10px;
@@ -136,6 +148,14 @@ main {
   gap: 4px;
   align-items: center;
   justify-content: space-between;
+}
+
+.post-resolved {
+  color: green;
+}
+
+.post-unresolved {
+  color: red;
 }
 
 .right {
