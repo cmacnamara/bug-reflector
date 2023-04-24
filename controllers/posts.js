@@ -40,7 +40,9 @@ function create(req,res) {
 function show(req,res) {
   Post.findById(req.params.postId)
   .populate('owner')
+  .populate('comments.owner')
   .then(post => {
+    console.log('Comments', post.comments);
     res.render('posts/show', {
       post,
       title: 'Post Detail'

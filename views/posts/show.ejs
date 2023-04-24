@@ -30,6 +30,13 @@
       <textarea name="content" class="text-area" cols="30" rows="5" placeholder="Leave a comment"></textarea><br>
       <button type="submit">Add Comment</button>
     </form>
+    <% if (post.comments.length) { %>
+     <hr>
+     <% post.comments.forEach(comment => { %>
+      <h4><%= comment.owner.name %> on <%= comment.createdAt.toLocaleDateString() %></h4>
+      <p><%= comment.content %></p>
+     <% }) %>
+    <% } %>
   </div>
 </section>
 
