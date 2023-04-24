@@ -11,12 +11,14 @@
     <div class="content-card">
       <div class="post-headline">
         <h3>Posted by <%= post.owner.name %> on <%= post.createdAt.toLocaleDateString() %></h3>
+        <% if (post.owner.equals(user?.profile._id)) { %>
         <div class="post-actions">
           <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
             <button>Delete</button>
           </form>
           <a href="/posts/<%= post._id %>/edit"><button>Edit</button></a>
         </div>
+        <% } %>
       </div>
       <h3><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
       <a href="/posts/<%= post._id %>"><h2><%= post.summary %></h2></a>
