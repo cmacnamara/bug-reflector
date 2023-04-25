@@ -268,6 +268,18 @@ p {
   color:#818384;
 }
 
+.action-btn {
+  background-color:#343536;
+  border: none;
+  color: #D7DADC;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.action-btn:hover {
+  background-color: #818384;
+}
+
 @media only screen and (min-width: 640px) {
   .content-card, .new-post-card {
     width: 640px;
