@@ -161,3 +161,9 @@ p {
 .right {
   margin-left: auto;
 }
+
+@media only screen and (min-width: 640px) {
+  .content-card {
+    width: 640px;
+  }
+}
