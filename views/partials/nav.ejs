@@ -1,10 +1,11 @@
   <% if (!user) { %>
     <script defer src="https://accounts.google.com/gsi/client"></script>
   <% } %>
+  <script src="https://kit.fontawesome.com/753dbed23b.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <nav>
-    <a href="/posts">Bug Reflector</a>
+    <a id="title-link" href="/posts"><i class="fa-solid fa-bug" style="color: #f5f5f5;"></i> Bug Reflector</a>
     <% if (user) { %>
       <div id="nav-buttons">
         <a href="/profiles/<%= user.profile._id %>" class="right">

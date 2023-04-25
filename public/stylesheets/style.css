@@ -260,6 +260,14 @@ p {
   background-color: #818384;
 }
 
+#title-link {
+  text-decoration: none;
+}
+
+#title-link:hover {
+  color:#818384;
+}
+
 @media only screen and (min-width: 640px) {
   .content-card, .new-post-card {
     width: 640px;

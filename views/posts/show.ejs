@@ -52,11 +52,12 @@
           <div class="post-actions">
             <% if (post.owner.equals(user?.profile._id) || comment.owner.equals(user?.profile._id)) { %>
             <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-              <button>Delete</button>
+              <button><i class="fa-regular fa-trash-can" style="color: #bababa;"></i></button>
+              
             </form>
             <% } %>
             <% if (comment.owner.equals(user?.profile._id)) { %>
-              <a href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit"><button>Edit</button></a>
+              <a href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit"><button><i class="fa-regular fa-pen-to-square" style="color: #c4c4c4;"></i></button></a>
             <% } %>
           </div>
         </div>
