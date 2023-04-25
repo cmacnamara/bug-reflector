@@ -8,10 +8,10 @@
     <% if (user) { %>
       <div id="nav-buttons">
         <a href="/profiles/<%= user.profile._id %>" class="right">
-          <button type="submit">My Profile</button>
+          <button class="nav-btn" type="submit">My Profile</button>
         </a>
         <a href="/auth/logout" class="right">
-          <button type="submit">Logout</button>
+          <button class="nav-btn" type="submit">Logout</button>
         </a>
       </div>
     <% } else { %>
