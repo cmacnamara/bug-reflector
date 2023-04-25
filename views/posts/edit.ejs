@@ -7,18 +7,26 @@
       id="new-post-form" 
       action="/posts/<%= post._id %>?_method=PUT" 
       method="POST">
-      <input type="text" name="summary" value="<%= post.summary %>">
+      <h2 id="create-post-title">Edit Post</h2>
+      <input id="summary-input" type="text" name="summary" value="<%= post.summary %>">
       <textarea name="mainContent" class="text-area" cols="30" rows="5"><%= post.mainContent %></textarea>
-      <p style="margin: 0;">Did you fix your bug?: <input type="checkbox" name="resolved" <%= post.resolved ? 'checked' : ''%>></p> 
+      <p class="bug-resolved-prompt">Did you fix your bug?: <input type="checkbox" name="resolved" <%= post.resolved ? 'checked' : ''%>></p> 
       <textarea name="reflection" class="text-area" cols="30" rows="5"><%= post.reflection %></textarea>
-      <fieldset>      
+      <fieldset id="tech-list">      
         <legend>Related Technologies</legend>      
         <input type="checkbox" name="technologies" value="JavaScript" <%= post.technologies.includes('JavaScript') ? 'checked' : ''%>>JavaScript<br>      
         <input type="checkbox" name="technologies" value="HTML" <%= post.technologies.includes('HTML') ? 'checked' : ''%>>HTML<br>      
-        <input type="checkbox" name="technologies" value="CSS" <%= post.technologies.includes('CSS') ? 'checked' : ''%>>CSS<br>      
-        <br>          
+        <input type="checkbox" name="technologies" value="CSS" <%= post.technologies.includes('CSS') ? 'checked' : ''%>>CSS<br>             
+        <input type="checkbox" name="technologies" value="Python" <%= post.technologies.includes('Python') ? 'checked' : ''%>>Python<br>      
+        <input type="checkbox" name="technologies" value="ReactJS" <%= post.technologies.includes('ReactJS') ? 'checked' : ''%>>ReactJS<br>      
+        <input type="checkbox" name="technologies" value="MongoDB" <%= post.technologies.includes('MongoDB') ? 'checked' : ''%>>MongoDB<br>      
+        <input type="checkbox" name="technologies" value="Node.js" <%= post.technologies.includes('Node.js') ? 'checked' : ''%>>Node.js<br>      
+        <input type="checkbox" name="technologies" value="Express.js" <%= post.technologies.includes('Express.js') ? 'checked' : ''%>>Express.js<br>      
+        <input type="checkbox" name="technologies" value="Java" <%= post.technologies.includes('Java') ? 'checked' : ''%>>Java<br>        
+        <input type="checkbox" name="technologies" value="C#" <%= post.technologies.includes('C#') ? 'checked' : ''%>>C#<br>      
+        <input type="checkbox" name="technologies" value="C++" <%= post.technologies.includes('C++') ? 'checked' : ''%>>C++<br>      
     </fieldset> 
-      <button type="submit">Save Post</button>
+      <button class="nav-btn" type="submit">Save Post</button>
     </form>
   </div>
 </section>

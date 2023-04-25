@@ -77,8 +77,15 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  
 }
+
+.main-index-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .content-card {
   background-color: #1a1a1b;
   padding: 8px;
@@ -132,7 +139,7 @@ p {
   width: 90%;
 }
 
-.new-post-link:hover, .content-card:hover {
+.new-post-link:hover, .main-index-content > .content-card:hover {
   border-color: #818384;
 }
 
