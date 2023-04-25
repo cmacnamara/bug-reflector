@@ -139,7 +139,8 @@ p {
 #new-post-form { 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 20px;
 }
 
 .comment-form {
@@ -155,14 +156,36 @@ p {
   width: 550px;
 }
 
+#create-post-title {
+  margin: 10px 0 0 33px;
+  align-self: flex-start;
+}
+
+#summary-input {
+  width: 90%;
+  background-color: #303030;
+  color:#D7DADC;
+  border: solid 1px #818384;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.bug-resolved-prompt {
+  align-self: flex-start;
+  margin: 0 0 0 33px;
+  color:#D7DADC;
+}
+
 .text-area {
   resize: vertical;
+  border-radius: 4px;
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
   'Helvetica Neue', sans-serif;
   min-height: 100px;
   width: 90%;
   background-color: #303030;
   color:#D7DADC;
+  padding: 5px;
 }
 
 #checkboxes label {
@@ -175,9 +198,10 @@ p {
 }
 
 #tech-list {
-  display: inline;
-  list-style: none;
-  border: solid pink 2px;
+  width: 90%;
+  border-radius: 4px;
+  border: solid 1px #818384;
+  color:#D7DADC;
 }
 
 .post-headline {
