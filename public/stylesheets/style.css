@@ -88,6 +88,15 @@ p {
   margin-top: 10px;
 }
 
+.new-post-card {
+  background-color: #1a1a1b;
+  padding: 8px;
+  border: 1px solid #343536;
+  border-radius: 4px;
+  width: 95%;
+  margin-top: 10px;
+}
+
 #create-post-container {
   display: flex;
   align-items: center;
@@ -165,13 +174,33 @@ p {
 
 .post-resolved {
   color: green;
+  font-size: 14px;
+  margin: 0 0 0 8px;
+  background-color: #343536;
+  border-radius: 4px;
+  padding: 2px;
+  width: 100px;
 }
 
 .post-unresolved {
   color: red;
+  font-size: 14px;
+  margin: 0 0 0 8px;
+  background-color: #343536;
+  border-radius: 4px;
+  padding: 2px;
+  width: 115px;
 }
 
 .post-author {
+  font-size: 12px;
+}
+
+.post-summary {
+  font-size: 18px;
+}
+
+.tech-list {
   font-size: 12px;
 }
 
@@ -180,7 +209,7 @@ p {
 }
 
 @media only screen and (min-width: 640px) {
-  .content-card {
+  .content-card, .new-post-card {
     width: 640px;
   }
 }

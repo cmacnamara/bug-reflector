@@ -6,7 +6,7 @@
   <% posts.forEach(post => { %>
     <div class="content-card">
       <div class="post-headline">
-        <h3>Posted by <a href="/profiles/<%= post.owner._id %>"><%= post.owner.name %></a> on <%= post.createdAt.toLocaleDateString() %></h3>
+        <h3 class="post-author">Posted by <a href="/profiles/<%= post.owner._id %>"><%= post.owner.name %></a> on <%= post.createdAt.toLocaleDateString() %></h3>
         <% if (post.owner.equals(user?.profile._id)) { %>
         <div class="post-actions">
           <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
@@ -17,11 +17,15 @@
         <% } %>
       </div>
       <h3 class="<%= post.resolved ? 'post-resolved' : 'post-unresolved' %>"><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
-      <a href="/posts/<%= post._id %>"><h2><%= post.summary %></h2></a>
+      <a href="/posts/<%= post._id %>"><h2 class="post-summary"><%= post.summary %></h2></a>
       <% if (post.technologies) { %>
-        <p>
-          <% post.technologies.forEach(technology => { %>
-            <%= technology %>
+        <p class="tech-list">
+          <% post.technologies.forEach((technology, idx) => { %>
+            <% if (idx < post.technologies.length-1) { %>
+              <%= technology %> ·
+            <% } else {%>
+              <%= technology %> 
+            <% } %>
           <% }) %>
         </p>
       <% } %>
