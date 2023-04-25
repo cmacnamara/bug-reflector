@@ -55,7 +55,7 @@
         <div class="comment-headline">
           <div class="comment-pic-and-name">
             <img class="comment-pic" src="<%= comment.owner.avatar %>" alt="Profile picture">   
-            <h4 class="comment-author"><%= comment.owner.name %> on <%= comment.createdAt.toLocaleDateString() %> <span style="font-style: italic;"><%= comment.edited ? '(edited)' : '' %></span></h4>
+            <h4 class="comment-author"><a href="/profiles/<%= comment.owner._id %>"><%= comment.owner.name %></a> on <%= comment.createdAt.toLocaleDateString() %> <span style="font-style: italic;"><%= comment.edited ? '(edited)' : '' %></span></h4>
           </div>
           <div class="post-actions">
             <% if (post.owner.equals(user?.profile._id) || comment.owner.equals(user?.profile._id)) { %>

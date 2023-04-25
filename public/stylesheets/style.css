@@ -297,6 +297,10 @@ p {
   gap: 5px;
 }
 
+.post-headline > .comment-pic-and-name {
+  gap: 0;
+}
+
 .comment-pic {
   border-radius: 50%;
   height: 25px;

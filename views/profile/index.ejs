@@ -2,11 +2,14 @@
 <%- include('../partials/nav') %>
 
 <section class="main-content">
-  <h1>Viewing A Profile</h1>
+  <h1>Viewing <%= posts[0].owner.name %>'s Profile</h1>
   <% posts.forEach(post => { %>
     <div class="content-card">
       <div class="post-headline">
-        <h3 class="post-author">Posted by <a href="/profiles/<%= post.owner._id %>"><%= post.owner.name %></a> on <%= post.createdAt.toLocaleDateString() %></h3>
+        <div class="comment-pic-and-name">
+          <img class="comment-pic" src="<%= post.owner.avatar %>" alt="Profile picture">  
+          <h3 class="post-author">Posted by <a href="/profiles/<%= post.owner._id %>"><%= post.owner.name %></a> on <%= post.createdAt.toLocaleDateString() %></h3>
+        </div>
         <% if (post.owner.equals(user?.profile._id)) { %>
         <div class="post-actions">
           <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
@@ -16,8 +19,8 @@
         </div>
         <% } %>
       </div>
-      <h3 class="<%= post.resolved ? 'post-resolved' : 'post-unresolved' %>"><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
       <a href="/posts/<%= post._id %>"><h2 class="post-summary"><%= post.summary %></h2></a>
+      <h3 class="<%= post.resolved ? 'post-resolved' : 'post-unresolved' %>"><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
       <% if (post.technologies) { %>
         <p class="tech-list">
           <% post.technologies.forEach((technology, idx) => { %>
