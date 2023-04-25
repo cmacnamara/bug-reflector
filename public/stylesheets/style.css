@@ -94,7 +94,14 @@ p {
   border: 1px solid #343536;
   border-radius: 4px;
   width: 95%;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 #create-post-container {
@@ -135,9 +142,25 @@ p {
   gap: 10px;
 }
 
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.comment-divider {
+  border-color: #818384;
+  width: 550px;
+}
+
 .text-area {
   resize: vertical;
   min-height: 100px;
+  width: 90%;
+  background-color: #303030;
+  color:#D7DADC;
 }
 
 #checkboxes label {
@@ -196,6 +219,11 @@ p {
   font-size: 12px;
 }
 
+.comment-card > .post-author {
+  align-self: flex-start;
+  margin-left: 30px;
+}
+
 .post-summary {
   font-size: 18px;
 }
@@ -224,7 +252,7 @@ p {
   color: #D7DADC;
   height: 32px;
   line-height: 100%;
-  letter-spacing: .1rem;
+  letter-spacing: .05rem;
   padding: 10px 20px;
 }
 

@@ -15,8 +15,10 @@
       <% } %>
     </div>
     <h2 class="post-summary"><%= post.summary %></h2>
-    <h3 class="<%= post.resolved ? 'post-resolved' : 'post-unresolved' %>"><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
-    <p><%= post.mainContent %></p>
+    <h3 class="<%= post.resolved ? 'post-resolved' : 'post-unresolved' %>"><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3><br>
+    <h3>Details</h3>
+    <p><%= post.mainContent %></p><br>
+    <h3>Reflection</h3>
     <p><%= post.reflection %></p>
     <% if (post.technologies) { %>
       <p class="tech-list">
@@ -29,34 +31,39 @@
         <% }) %>
       </p>
     <% } %>
+  </div>
+  <div class="content-card">
     <% if (user) { %>
-    <h3>Comment as <%= user?.profile.name %></h3>
-    <form action="/posts/<%= post._id %>/comments" method="POST">
-      <textarea name="content" class="text-area" cols="30" rows="5" placeholder="Leave a comment"></textarea><br>
-      <button type="submit">Add Comment</button>
-    </form>
-    <% } else { %>
-      <h3>Log In to leave a comment!</h3>
-      <% } %>
-    <% if (post.comments.length) { %>
-     <hr>
-     <% post.comments.forEach(comment => { %>
-      <div class="comment-headline">
-        <h4><%= comment.owner.name %> on <%= comment.createdAt.toLocaleDateString() %> <span style="font-style: italic;"><%= comment.edited ? '(edited)' : '' %></span></h4>
-        <div class="post-actions">
-          <% if (post.owner.equals(user?.profile._id) || comment.owner.equals(user?.profile._id)) { %>
-          <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-            <button>Delete</button>
-          </form>
-          <% } %>
-          <% if (comment.owner.equals(user?.profile._id)) { %>
-            <a href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit"><button>Edit</button></a>
-          <% } %>
+    <div class="comment-card">
+      <h3 class="post-author">Comment as <%= user?.profile.name %></h3>
+      <form class="comment-form" action="/posts/<%= post._id %>/comments" method="POST">
+        <textarea name="content" class="text-area" cols="60" rows="5" placeholder="Leave a comment"></textarea>
+        <button class="nav-btn" type="submit">Add Comment</button>
+      </form>
+    </div>
+      <% } else { %>
+        <h3 style="text-align: center;">Log In to leave a comment!</h3>
+        <% } %>
+      <% if (post.comments.length) { %>
+      <hr class="comment-divider">
+      <% post.comments.forEach(comment => { %>
+        <div class="comment-headline">
+          <h4><%= comment.owner.name %> on <%= comment.createdAt.toLocaleDateString() %> <span style="font-style: italic;"><%= comment.edited ? '(edited)' : '' %></span></h4>
+          <div class="post-actions">
+            <% if (post.owner.equals(user?.profile._id) || comment.owner.equals(user?.profile._id)) { %>
+            <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+              <button>Delete</button>
+            </form>
+            <% } %>
+            <% if (comment.owner.equals(user?.profile._id)) { %>
+              <a href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit"><button>Edit</button></a>
+            <% } %>
+          </div>
         </div>
-      </div>
-      <p><%= comment.content %></p>
-     <% }) %>
-    <% } %>
+        <p><%= comment.content %></p>
+      <% }) %>
+      <% } %>
+
   </div>
 </section>
 
