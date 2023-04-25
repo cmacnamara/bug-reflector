@@ -8,6 +8,7 @@
     <a id="title-link" href="/posts"><i class="fa-solid fa-bug" style="color: #f5f5f5;"></i> Bug Reflector</a>
     <% if (user) { %>
       <div id="nav-buttons">
+        <p id="greeting">Hello, <%= user.profile.name %>!</p>
         <a href="/profiles/<%= user.profile._id %>" class="right">
           <button class="nav-btn" type="submit">My Profile</button>
         </a>

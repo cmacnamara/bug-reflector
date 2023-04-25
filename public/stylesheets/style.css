@@ -157,6 +157,8 @@ p {
 
 .text-area {
   resize: vertical;
+  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+  'Helvetica Neue', sans-serif;
   min-height: 100px;
   width: 90%;
   background-color: #303030;
@@ -193,6 +195,11 @@ p {
   gap: 4px;
   align-items: center;
   justify-content: space-between;
+}
+
+.comment-author {
+  margin: 0;
+  font-size: 12px;
 }
 
 .post-resolved {
@@ -268,6 +275,10 @@ p {
   color:#818384;
 }
 
+#greeting {
+  color:#D7DADC;
+}
+
 .action-btn {
   background-color:#343536;
   border: none;
@@ -278,6 +289,21 @@ p {
 
 .action-btn:hover {
   background-color: #818384;
+}
+
+.comment-pic-and-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.comment-pic {
+  border-radius: 50%;
+  height: 25px;
+}
+
+.comment-content {
+  margin-left: 33px;
 }
 
 @media only screen and (min-width: 640px) {

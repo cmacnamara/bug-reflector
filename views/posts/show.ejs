@@ -4,7 +4,10 @@
 <section class="main-content">
   <div class="content-card">
     <div class="post-headline">
-      <h3 class="post-author">Posted by <a href="/profiles/<%= post.owner._id %>"><%= post.owner.name %></a> on <%= post.createdAt.toLocaleDateString() %></h3>
+      <div class="comment-pic-and-name">
+        <img class="comment-pic" src="<%= post.owner.avatar %>" alt="Profile picture">  
+        <h3 class="post-author">Posted by <a href="/profiles/<%= post.owner._id %>"><%= post.owner.name %></a> on <%= post.createdAt.toLocaleDateString() %></h3>
+      </div>
       <% if (post.owner.equals(user?.profile._id)) { %>
       <div class="post-actions">
         <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
@@ -45,15 +48,19 @@
         <h3 style="text-align: center;">Log In to leave a comment!</h3>
         <% } %>
       <% if (post.comments.length) { %>
-      <hr class="comment-divider">
+        <br>
+      <hr class="comment-divider"><br>
+
       <% post.comments.forEach(comment => { %>
         <div class="comment-headline">
-          <h4><%= comment.owner.name %> on <%= comment.createdAt.toLocaleDateString() %> <span style="font-style: italic;"><%= comment.edited ? '(edited)' : '' %></span></h4>
+          <div class="comment-pic-and-name">
+            <img class="comment-pic" src="<%= comment.owner.avatar %>" alt="Profile picture">   
+            <h4 class="comment-author"><%= comment.owner.name %> on <%= comment.createdAt.toLocaleDateString() %> <span style="font-style: italic;"><%= comment.edited ? '(edited)' : '' %></span></h4>
+          </div>
           <div class="post-actions">
             <% if (post.owner.equals(user?.profile._id) || comment.owner.equals(user?.profile._id)) { %>
             <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
               <button class="action-btn"><i class="fa-regular fa-trash-can" style="color: #bababa;"></i> Delete</button>
-              
             </form>
             <% } %>
             <% if (comment.owner.equals(user?.profile._id)) { %>
@@ -61,7 +68,7 @@
             <% } %>
           </div>
         </div>
-        <p><%= comment.content %></p>
+        <p class="comment-content"><%= comment.content %></p><br>
       <% }) %>
       <% } %>
 
