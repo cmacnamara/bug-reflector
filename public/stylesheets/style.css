@@ -13,8 +13,8 @@ html {
 }
 
 body {
-  background-color: #1a1a1a;
-  color: #000000;
+  background-color: #030303;
+  color: #D7DADC;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
@@ -23,13 +23,14 @@ body {
 }
 
 nav {
-  background-color: #f6f6f6;
+  background-color: #1a1a1b;
   color: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
   min-height: 60px;
+  border-bottom: 1px solid #343536;
 }
 
 main {
@@ -38,6 +39,17 @@ main {
   justify-content: center;
   flex-direction: column;
 }
+
+a {
+  color:#D7DADC;
+  text-decoration: none;
+}
+a:visited {color:#D7DADC;}
+a:hover {
+  color:#D7DADC;
+  text-decoration: underline;
+}
+a:active {text-decoration: underline;}  
 
 h2 {
   margin: 8px;
@@ -68,8 +80,9 @@ p {
   
 }
 .content-card {
-  background-color: white;
+  background-color: #1a1a1b;
   padding: 8px;
+  border: 1px solid #343536;
   border-radius: 4px;
   width: 95%;
   margin-top: 10px;
@@ -92,7 +105,7 @@ p {
 }
 
 .new-post-link {
-  border: 1px solid #888;
+  border: 1px solid #343536;
   box-sizing: border-box;
   display: block;
   font-family: sans-serif;
@@ -103,8 +116,8 @@ p {
   width: 90%;
 }
 
-.new-post-link:hover {
-  border-color: #bebebe;
+.new-post-link:hover, .content-card:hover {
+  border-color: #818384;
 }
 
 #new-post-form { 
@@ -156,6 +169,10 @@ p {
 
 .post-unresolved {
   color: red;
+}
+
+.post-author {
+  font-size: 12px;
 }
 
 .right {

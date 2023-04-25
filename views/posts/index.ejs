@@ -10,7 +10,7 @@
   <% posts.forEach(post => { %>
     <div class="content-card">
       <div class="post-headline">
-        <h3>Posted by <a href="/profiles/<%= post.owner._id %>"><%= post.owner.name %></a> on <%= post.createdAt.toLocaleDateString() %></h3>
+        <h3 class="post-author">Posted by <a href="/profiles/<%= post.owner._id %>"><%= post.owner.name %></a> on <%= post.createdAt.toLocaleDateString() %></h3>
         <% if (post.owner.equals(user?.profile._id)) { %>
         <div class="post-actions">
           <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
