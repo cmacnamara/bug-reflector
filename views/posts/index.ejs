@@ -7,6 +7,7 @@
       <div class="new-post-link">Create a post</div>
     </a>
   </div>
+  <% if(posts) { %>
   <% posts.forEach(post => { %>
     <div class="content-card">
       <div class="post-headline">
@@ -38,6 +39,7 @@
       <% } %>
     </div>
   <% }) %>
+  <% } %>
 </section>
 
 <%- include('../partials/footer') %>

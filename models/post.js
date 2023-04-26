@@ -13,7 +13,6 @@ const commentSchema = new Schema({
 const postSchema = new Schema({
   mainContent: String,
   summary: String,
-  ////technologies: [String],
   resolved: Boolean,
   reflection: String,
   summary: String,
