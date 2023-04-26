@@ -1,5 +1,37 @@
 # Bug Reflector
 
+![Screenshot of the main index page of Bug Reflector displaying all posts](./public/images/bug.png)
+
+Bug Reflector is a blog-like app designed to give developers a space to log and reflect upon bugs that they encounter. It also allows for users to comment on one another's posts in an effort to build a supportive, reflective community. I personally believe in the power of self-reflection. As a developer, carefully articulating one's bugs and their solution is an invaluable practice that can dramatically boost one's coding proficiency. This practice also helps developers become better mentors and fosters clear and effective communication between developers.
+
+The app also allows users to view other users' profiles which contain a list of their posts. Users can also search all posts for specific key words and phrases.
+
+## Getting Started
+## [Access the app here!](https://bug-reflector.fly.dev/)
+View this project's planning materials [here](https://trello.com/b/nyWyQOFy/bug-reflector)
+
 ## Attributions
-- Favicon by Muhammad Tajujin found on flaticon
-https://www.flaticon.com/free-icon/bug_3024112?term=bug&page=1&position=37&origin=search&related_id=3024112
+Bug Reflector uses a bug favicon created by Muhammad Tajujin available from [flaticon](https://www.flaticon.com/free-icon/bug_3024112?term=bug&page=1&position=37&origin=search&related_id=3024112)
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- JavaScript
+- EJS
+- CSS
+- Git
+- Google OAuth
+- MongoDB and Mongoose
+- fly.io
+
+## Next Steps
+- [ ] Add light mode
+- [ ] Add favoriting feature to posts
+- [ ] Add tag system to posts
+- [ ] Add follower system
+- [ ] Add filtering feature to post list
+- [ ] Add profile customization feature
+- [ ] Add ability to add code snippets to posts
+- [ ] Add nested replies to comments
+- [ ] Add language model that will allow users to indicate/track their proficiency in various languages
