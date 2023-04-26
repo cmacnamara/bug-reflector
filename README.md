@@ -26,12 +26,12 @@ Bug Reflector uses a bug favicon created by Muhammad Tajujin available from [fla
 - fly.io
 
 ## Next Steps
-- [ ] Add light mode
-- [ ] Add favoriting feature to posts
-- [ ] Add tag system to posts
-- [ ] Add follower system
-- [ ] Add filtering feature to post list
-- [ ] Add profile customization feature
-- [ ] Add ability to add code snippets to posts
-- [ ] Add nested replies to comments
-- [ ] Add language model that will allow users to indicate/track their proficiency in various languages
+- [ ] Add light mode.
+- [ ] Add a favoriting feature to posts.
+- [ ] Add a tag system to posts.
+- [ ] Add a follower system.
+- [ ] Add a filtering feature to the list of posts.
+- [ ] Add a profile customization feature.
+- [ ] Add the ability to add code snippets to posts.
+- [ ] Add nested replies to comments.
+- [ ] Add a language model that will allow users to indicate/track their proficiency in various languages.
