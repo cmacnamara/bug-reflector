@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
-  height: 100%;
+  height: 100vh;
+  background-color: #030303;
 }
 
 /* The Universal Selector */
@@ -366,6 +367,10 @@ p {
 }
 
 .comment-content {
+  margin-left: 33px;
+}
+
+.admin-tech-items {
   margin-left: 33px;
 }
 
