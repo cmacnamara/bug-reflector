@@ -71,15 +71,20 @@ function show(req,res) {
 
 function edit(req,res) {
   Post.findById(req.params.postId)
+  .populate('technologies')
   .then(post => {
-    res.render('posts/edit', {
-      title: 'Edit Post',
-      post
+    Technology.find({})
+    .then(technologies => {
+      res.render('posts/edit', {
+        title: 'Edit Post',
+        post,
+        technologies
+      })
     })
-  })
-  .catch(err => {
-    console.log(err);
-    res.redirect('/posts');
+    .catch(err => {
+      console.log(err);
+      res.redirect('/posts');
+    })
   })
 }
 

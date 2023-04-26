@@ -13,8 +13,11 @@
       <p class="bug-resolved-prompt">Did you fix your bug?: <input type="checkbox" name="resolved" <%= post.resolved ? 'checked' : ''%>></p> 
       <textarea name="reflection" class="text-area" cols="30" rows="5"><%= post.reflection %></textarea>
       <fieldset id="tech-list">      
-        <legend>Related Technologies</legend>      
-        <input type="checkbox" name="technologies" value="JavaScript" <%= post.technologies.includes('JavaScript') ? 'checked' : ''%>>JavaScript<br>      
+        <legend>Related Technologies</legend>
+        <% technologies.forEach(technology => { %>
+          <input type="checkbox" name="technologies" value="<%= technology._id %>" <%= post.technologies.some(tech => tech.name === technology.name) ? 'checked' : ''%>><%= technology.name %><br>
+        <% }) %>      
+        <!-- <input type="checkbox" name="technologies" value="JavaScript" <%= post.technologies.includes('JavaScript') ? 'checked' : ''%>>JavaScript<br>      
         <input type="checkbox" name="technologies" value="HTML" <%= post.technologies.includes('HTML') ? 'checked' : ''%>>HTML<br>      
         <input type="checkbox" name="technologies" value="CSS" <%= post.technologies.includes('CSS') ? 'checked' : ''%>>CSS<br>             
         <input type="checkbox" name="technologies" value="Python" <%= post.technologies.includes('Python') ? 'checked' : ''%>>Python<br>      
@@ -24,7 +27,7 @@
         <input type="checkbox" name="technologies" value="Express.js" <%= post.technologies.includes('Express.js') ? 'checked' : ''%>>Express.js<br>      
         <input type="checkbox" name="technologies" value="Java" <%= post.technologies.includes('Java') ? 'checked' : ''%>>Java<br>        
         <input type="checkbox" name="technologies" value="C#" <%= post.technologies.includes('C#') ? 'checked' : ''%>>C#<br>      
-        <input type="checkbox" name="technologies" value="C++" <%= post.technologies.includes('C++') ? 'checked' : ''%>>C++<br>      
+        <input type="checkbox" name="technologies" value="C++" <%= post.technologies.includes('C++') ? 'checked' : ''%>>C++<br>       -->
     </fieldset> 
       <button class="nav-btn" type="submit">Save Post</button>
     </form>
