@@ -14,6 +14,14 @@ function newTechnology(req, res) {
   })
 }
 
+function create(req,res) {
+  Technology.create(req.body)
+  .then(technology => {
+    res.redirect('/technologies/new')
+  })
+}
+
 export {
   newTechnology as new,
+  create,
 }
