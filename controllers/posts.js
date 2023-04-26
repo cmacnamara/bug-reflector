@@ -158,7 +158,6 @@ function editComment(req,res) {
   Post.findById(req.params.postId)
   .then(post => {
     const comment = post.comments.id(req.params.commentId)
-    console.log("Found comment", comment);
     res.render('comments/edit', {
       title: 'Edit Comment',
       post,

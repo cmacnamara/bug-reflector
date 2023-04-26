@@ -1,24 +1,36 @@
 import { Technology } from '../models/technology.js'
 
 function newTechnology(req, res) {
-  Technology.find({})
-  .then(technologies => {
-    res.render('technologies/new', {
-      title: 'Add Technology',
-      technologies
+  if(req.user.admin) {
+    Technology.find({})
+    .then(technologies => {
+      res.render('technologies/new', {
+        title: 'Add Technology',
+        technologies
+      })
     })
-  })
-  .catch(err => {
-    console.log(err);
-    res.redirect('/posts')
-  })
+    .catch(err => {
+      console.log(err);
+      res.redirect('/posts')
+    })
+  } else {
+    throw new Error('🚫 Not authorized 🚫')
+  }
 }
 
 function create(req,res) {
-  Technology.create(req.body)
-  .then(technology => {
-    res.redirect('/technologies/new')
-  })
+  if(req.user.admin) {
+    Technology.create(req.body)
+    .then(technology => {
+      res.redirect('/technologies/new')
+    })
+    .catch(err => {
+      console.log(err);
+      res.redirect('/posts')
+    })
+  } else {
+    throw new Error('🚫 Not authorized 🚫')
+  }
 }
 
 export {
