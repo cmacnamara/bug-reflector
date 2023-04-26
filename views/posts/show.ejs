@@ -24,6 +24,7 @@
     <h3>Reflection</h3>
     <p><%= post.reflection %></p>
     <% if (post.technologies) { %>
+      <br>
       <p class="tech-list">
         <% post.technologies.forEach((technology, idx) => { %>
           <% if (idx < post.technologies.length-1) { %>

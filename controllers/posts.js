@@ -7,6 +7,7 @@ function index(req, res) {
     : {}
   Post.find(modelQuery)
   .populate('owner')
+  .populate('technologies')
   .then(posts => {
     res.render('posts/index', {
       posts,

@@ -3,12 +3,13 @@
 
 <section class="main-content">
   <div class="content-card">
+    <h2 id="create-post-title">Edit Comment</h2><br>
     <form 
       id="new-post-form" 
       action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT" 
       method="POST">
-      <textarea name="content" class="text-area" cols="30" rows="5"><%= comment.content %></textarea><br>
-      <button type="submit">Update Comment</button>
+      <textarea name="content" class="text-area" cols="30" rows="5"><%= comment.content %></textarea>
+      <button class="nav-btn" type="submit">Update Comment</button>
     </form>
   </div>
 </section>
