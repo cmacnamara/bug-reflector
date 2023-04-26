@@ -1,7 +1,10 @@
 import { Post } from '../models/post.js'
 
 function index(req, res) {
-  Post.find({})
+  let modelQuery = req.query.summary
+    ? { summary: new RegExp(req.query.summary, 'i') }
+    : {}
+  Post.find(modelQuery)
   .populate('owner')
   .then(posts => {
     res.render('posts/index', {

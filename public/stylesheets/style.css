@@ -181,6 +181,21 @@ p {
   border-radius: 4px;
   padding: 5px;
 }
+#search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#search-input {
+  width: 300px;
+  height: 35px;
+  background-color: #303030;
+  color:#D7DADC;
+  border: solid 1px #818384;
+  border-radius: 16px;
+  padding: 10px;
+}
 
 .bug-resolved-prompt {
   align-self: flex-start;
@@ -313,6 +328,7 @@ p {
 
 #greeting {
   color:#D7DADC;
+  font-size: 12px;
 }
 
 .action-btn {

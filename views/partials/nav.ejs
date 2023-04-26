@@ -6,6 +6,15 @@
 <body>
   <nav>
     <a id="title-link" href="/posts"><i class="fa-solid fa-bug" style="color: #f5f5f5;"></i> Bug Reflector</a>
+    <form id="search-form" action="/posts" method="GET">
+      <input
+        id="search-input"
+        type="search"
+        name="summary"
+        placeholder="Search posts..."
+        autocomplete="off"
+      />
+    </form>
     <% if (user) { %>
       <div id="nav-buttons">
         <p id="greeting">Hello, <%= user.profile.name %>!</p>
