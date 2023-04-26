@@ -27,9 +27,9 @@
       <p class="tech-list">
         <% post.technologies.forEach((technology, idx) => { %>
           <% if (idx < post.technologies.length-1) { %>
-            <%= technology %> ·
+            <%= technology.name %> ·
           <% } else {%>
-            <%= technology %> 
+            <%= technology.name %> 
           <% } %>
         <% }) %>
       </p>

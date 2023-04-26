@@ -9,6 +9,18 @@
         <button class="nav-btn" type="submit" >Add Technology</button>
     </form>
   </div>
+  <div class="content-card">
+    <h2 id="create-post-title">Added Technologies</h2>
+    <% const technologiesArray = [] %>
+    <% let technologyExists = false %>
+    <% technologies.forEach(function(technology) { %>
+      <% if(technologiesArray.includes(technology.name)) technologyExists = true%>
+      <% technologiesArray.push(technology.name) %>
+      <p style="<%= technologyExists ? 'color: red' : ''%>">
+        <%= technology.name %><span style="font-style: italic;"><%= technologyExists ? '(technology already exists)' : ''%></span>
+      </p>
+    <% }) %>
+  </div>
 </section>
 
 <%- include('../partials/footer') %>

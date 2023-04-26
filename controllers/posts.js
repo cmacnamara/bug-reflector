@@ -1,4 +1,5 @@
 import { Post } from '../models/post.js'
+import { Technology } from '../models/technology.js'
 
 function index(req, res) {
   let modelQuery = req.query.summary
@@ -19,8 +20,16 @@ function index(req, res) {
 }
 
 function newPost(req,res) {
-  res.render('posts/new', {
-    title: 'New Post'
+  Technology.find({})
+  .then(technologies => {
+    res.render('posts/new', {
+      title: 'New Post',
+      technologies
+    })
+  })
+  .catch(err => {
+    console.log(err);
+    res.redirect('/');
   })
 }
 
@@ -32,7 +41,7 @@ function create(req,res) {
   }
   Post.create(req.body)
   .then(post => {
-    res.redirect('/posts')
+    res.redirect(`/posts/${post._id}`)
   })
   .catch(err => {
     console.log(err);
@@ -44,10 +53,13 @@ function show(req,res) {
   Post.findById(req.params.postId)
   .populate('owner')
   .populate('comments.owner')
-  .then(post => {
+  .populate('technologies')
+  .then(post => {  
+    console.log('Post: ', post);
+    console.log('Tech: ', post.technologies);
     res.render('posts/show', {
       post,
-      title: 'Post Detail'
+      title: 'Post Detail',
     })
   })
   .catch(err => {

@@ -10,6 +10,12 @@
       <p class="bug-resolved-prompt">Did you fix your bug?: <input type="checkbox" name="resolved"></p> 
       <textarea name="reflection" class="text-area" cols="30" rows="5" placeholder="What did you learn from this bug?"></textarea>
       <fieldset id="tech-list">      
+        <legend>Related Technologies</legend>  
+        <% technologies.forEach(technology => { %>
+          <input type="checkbox" name="technologies" value="<%= technology._id %>"><%= technology.name %><br>
+        <% }) %>
+      </fieldset>
+      <!-- <fieldset id="tech-list">      
         <legend>Related Technologies</legend>      
         <input type="checkbox" name="technologies" value="JavaScript">JavaScript<br>      
         <input type="checkbox" name="technologies" value="HTML">HTML<br>      
@@ -22,7 +28,7 @@
         <input type="checkbox" name="technologies" value="Java">Java<br>      
         <input type="checkbox" name="technologies" value="C#">C#<br>      
         <input type="checkbox" name="technologies" value="C++">C++
-      </fieldset> 
+      </fieldset>  -->
       <div>
         <button class="nav-btn" type="submit" >Create Post</button>
       </div>
