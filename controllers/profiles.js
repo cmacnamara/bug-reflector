@@ -1,8 +1,9 @@
 import { Post } from '../models/post.js'
 
-function index(req,res) {
+function show(req,res) {
   Post.find({ owner: req.params.profileId })
   .populate('owner')
+  .populate('technologies')
   .then(posts => {
     res.render('profile/index', {
       posts,
@@ -16,5 +17,5 @@ function index(req,res) {
 }
 
 export {
-  index
+  show
 }
