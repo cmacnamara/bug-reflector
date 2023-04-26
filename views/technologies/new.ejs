@@ -1,0 +1,14 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section class="main-content">
+  <div class="content-card">
+    <form id="new-post-form" action="/technologies" method="POST">
+      <h2 id="create-post-title">Add Technology</h2>
+      <input id="summary-input" type="text" name="name" placeholder="Name of technology" required>
+        <button class="nav-btn" type="submit" >Add Technology</button>
+    </form>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
