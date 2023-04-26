@@ -20,13 +20,24 @@ function newTechnology(req, res) {
 
 function create(req,res) {
   if(req.user.admin) {
-    Technology.create(req.body)
-    .then(technology => {
-      res.redirect('/technologies/new')
+    Technology.find({})
+    .then(technologies => {
+      if(!technologies.find(tech => tech.name === req.body.name)) {
+        Technology.create(req.body)
+        .then(technology => {
+          res.redirect('/technologies/new')
+        })
+        .catch(err => {
+          console.log(err);
+          res.redirect('/technologies/new')
+        })
+      } else {
+        throw new Error(`🚫 ${req.body.name} already exists! 🚫`)
+      }
     })
     .catch(err => {
       console.log(err);
-      res.redirect('/posts')
+      res.redirect('/technologies/new')
     })
   } else {
     throw new Error('🚫 Not authorized 🚫')
