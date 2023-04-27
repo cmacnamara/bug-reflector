@@ -2,9 +2,9 @@
 
 ![Screenshot of the main index page of Bug Reflector displaying all posts](./public/images/screenshot-bug-reflector.png)
 
-Bug Reflector is a blog-like app designed to give developers a space to log and reflect upon bugs that they encounter. It also allows for users to comment on one another's posts in an effort to build a supportive, reflective community. I personally believe in the power of self-reflection. As a developer, carefully articulating one's bugs and their solution is an invaluable practice that can dramatically boost one's coding proficiency. This practice also helps developers become better mentors and fosters clear and effective communication between developers.
+Bug Reflector is a blog-like app designed to give developers a space to log and reflect upon bugs that they encounter. It also allows users to comment on one another's posts so that users can build a supportive, reflective community. I believe deeply in the power of self-reflection. As a developer, carefully articulating one's bugs and their solution is an invaluable practice that can dramatically boost one's coding proficiency. This practice also helps developers become better mentors and fosters clear and effective communication between developers.
 
-The app also allows users to view other users' profiles which contain a list of their posts. Users can also search all posts for specific key words and phrases.
+The app also allows users to view other users' profiles which contain a list of their posts. Users can also search all posts for specific keywords and phrases.
 
 ## Getting Started
 ## [Access the app here!](https://bug-reflector.fly.dev/)
