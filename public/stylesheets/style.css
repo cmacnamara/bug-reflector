@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
 html {
   box-sizing: border-box;
   min-height: 100%;
@@ -18,7 +20,7 @@ body {
   background-color: #030303;
   color: #D7DADC;
   /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+  font-family: 'IBM Plex Sans', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
   min-height: 100%;
