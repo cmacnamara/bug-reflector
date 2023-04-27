@@ -21,8 +21,10 @@
     <h3 class="<%= post.resolved ? 'post-resolved' : 'post-unresolved' %>"><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3><br>
     <h3>Details</h3>
     <p><%= post.mainContent %></p><br>
-    <h3>Reflection</h3>
-    <p><%= post.reflection %></p>
+    <% if (post.reflection) { %>
+      <h3>Reflection</h3>
+      <p><%= post.reflection %></p>
+    <% } %>
     <% if (post.technologies) { %>
       <br>
       <p class="tech-list">

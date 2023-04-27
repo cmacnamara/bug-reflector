@@ -13,6 +13,8 @@ View this project's planning materials [here](https://trello.com/b/nyWyQOFy/bug-
 ## Attributions
 Bug Reflector uses a bug favicon created by Muhammad Tajujin available from [flaticon](https://www.flaticon.com/free-icon/bug_3024112?term=bug&page=1&position=37&origin=search&related_id=3024112)
 
+Bug Reflector uses a landing page image created by Andrew Neel available from [unsplash](https://unsplash.com/photos/9moikpaufvg)
+
 ## Technologies Used
 
 - Node.js
