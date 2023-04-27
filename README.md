@@ -40,4 +40,6 @@ Bug Reflector uses the IBM Plex Sans font created by Mike Abbink and Bold Monday
 - [ ] Add a profile customization feature.
 - [ ] Add the ability to add code snippets to posts.
 - [ ] Add nested replies to comments.
-- [ ] Add a language model that will allow users to indicate/track their proficiency in various languages.
+- [ ] Allow users to indicate/track their proficiency in various languages and display this information on their profiles.
+- [ ] Add an admin panel that will allow users with admin status to enable admin status on other users and add new technologies to the current list.
+- [ ] Add a delete/edit feature to the technologies list. 
