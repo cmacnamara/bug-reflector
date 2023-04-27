@@ -4,6 +4,7 @@
 <section class="main-content">
   <% if(posts.length > 0) { %>
   <h1>Viewing <%= posts[0].owner.name %>'s Profile</h1>
+  <h2 class="profile-posts-title">All Posts</h2>
   <% posts.forEach(post => { %>
     <div class="content-card">
       <div class="post-headline">

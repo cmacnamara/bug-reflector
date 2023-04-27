@@ -420,6 +420,11 @@ p {
   margin-bottom: 10px;
 }
 
+.profile-posts-title {
+  margin: 0;
+  width: 95%;
+}
+
 @media only screen and (max-width: 965px) {
   #greeting {
     display: none;
@@ -436,7 +441,7 @@ p {
 }
 
 @media only screen and (min-width: 640px) {
-  .content-card, .new-post-card {
+  .content-card, .new-post-card, .profile-posts-title {
     width: 640px;
   }
 }
