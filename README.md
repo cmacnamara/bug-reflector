@@ -15,6 +15,10 @@ Bug Reflector uses a bug favicon created by Muhammad Tajujin available from [fla
 
 Bug Reflector uses a landing page image created by Andrew Neel available from [unsplash](https://unsplash.com/photos/9moikpaufvg)
 
+Bug Reflector uses the Rubik Pixels font created by Nan and Like Prowse available from [Google Fonts](https://fonts.google.com/share?selection.family=Rubik%20Pixels)
+
+Bug Reflector uses the IBM Plex Sans font created by Mike Abbink and Bold Monday available from [Google Fonts](https://fonts.google.com/share?selection.family=IBM%20Plex%20Sans)
+
 ## Technologies Used
 
 - Node.js

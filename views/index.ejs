@@ -5,47 +5,57 @@
   <div id="landing-left">
   </div>
   <div id="landing-right">
-    <h1>BUG REFLECTOR</h1>
-    <% if (user) { %>
-      <div>
-        <a href="/auth/logout">
-          <button type="submit">Logout</button>
-        </a>
-      </div>
-      <div>
-        <a href="/posts"><button class="nav-btn">Continue to Posts</button></a>
-      </div>
-    <% } else { %>
-      <div id="google-btn">
-        <div 
-        id="g_id_onload"
-        data-client_id="<%= googleClientID %>"
-        data-login_uri="/auth/google"
-        data-auto_prompt="false"
-        data-prompt_parent_id="g_id_onload"
-        ></div>
-        <div 
-          class="g_id_signin right"
-          data-type="standard"
-          data-size="large"
-          data-theme="outline"
-          data-text="sign_in_with"
-          data-shape="rectangular"
-          data-logo_alignment="left"
-        ></div>
-      </div>
-      <div>
-        <a href="/posts"><button class="nav-btn">Continue as Guest</button></a>
-      </div>
-      <% if (user?.profile.avatar) { %>
+    <div>
+      <h1 id="landing-title">BUG REFLECTOR</h1>
+      <img id="landing-img-bug" src="/images/bug-gray.png" alt="">
+    </div>
+    <div>
+      <h2>We all get bugs.</h2>
+      <h2>Learn from them together.</h2>
+    </div>
+    <div>
+      <% if (user) { %>
         <div>
-          <img
-            src="<%= user.profile.avatar %>"
-            alt="<%= user.profile.name %> avatar"
-          />
+          <a href="/auth/logout">
+            <button class="nav-btn" type="submit">Logout</button>
+          </a>
+        </div><br>
+        <div>
+          <a href="/posts"><button class="nav-btn">Continue to Posts</button></a>
         </div>
+      <% } else { %>
+        <div id="google-btn">
+          <div 
+          id="g_id_onload"
+          data-client_id="<%= googleClientID %>"
+          data-login_uri="/auth/google"
+          data-auto_prompt="false"
+          data-prompt_parent_id="g_id_onload"
+          ></div>
+          <div 
+            class="g_id_signin right"
+            data-type="standard"
+            data-size="large"
+            data-theme="outline"
+            data-text="sign_in_with"
+            data-shape="rectangular"
+            data-logo_alignment="left"
+          ></div>
+        </div>
+        <br>
+        <div>
+          <a href="/posts"><button class="nav-btn">Continue as Guest</button></a>
+        </div>
+        <% if (user?.profile.avatar) { %>
+          <div>
+            <img
+              src="<%= user.profile.avatar %>"
+              alt="<%= user.profile.name %> avatar"
+            />
+          </div>
+        <% } %>
       <% } %>
-    <% } %>
+    </div>
   </div>
 </main>
 
