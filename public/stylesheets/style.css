@@ -213,7 +213,7 @@ p {
 }
 
 #summary-input {
-  width: 90%;
+  width: 100%;
   background-color: #303030;
   color:#D7DADC;
   border: solid 1px #818384;
@@ -275,6 +275,19 @@ p {
   border-radius: 4px;
   border: solid 1px #818384;
   color:#D7DADC;
+}
+
+.form-fields {
+  width: 90%;
+}
+
+.label-spacer {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-text-area {
+  width: 100%;
 }
 
 .post-headline {

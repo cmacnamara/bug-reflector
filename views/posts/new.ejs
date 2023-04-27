@@ -5,10 +5,19 @@
   <div class="content-card">
     <form id="new-post-form" action="/posts" method="POST">
       <h2 id="create-post-title">Create Post as <%= user.profile.name %></h2>
-      <input id="summary-input" type="text" name="summary" placeholder="Summary" required>
-      <textarea name="mainContent" class="text-area" cols="30" rows="5" placeholder="Describe your bug" required></textarea>
-      <p class="bug-resolved-prompt">Did you fix your bug?: <input type="checkbox" name="resolved"></p> 
-      <textarea name="reflection" class="text-area" cols="30" rows="5" placeholder="What did you learn from this bug?"></textarea>
+      <div class="form-fields">
+        <label class="label-spacer" for="summary">Summary</label>
+        <input class="form-text-area" id="summary-input" type="text" name="summary" placeholder="Summary" required>
+      </div>
+      <div class="form-fields">
+        <label class="label-spacer" for="mainContent">Description</label>
+        <textarea name="mainContent" class="text-area form-text-area" cols="30" rows="5" placeholder="Describe your bug" required></textarea>
+      </div>
+      <label class="form-fields" for="resolved">Did you fix your bug?: <input type="checkbox" name="resolved"></label> 
+      <div class="form-fields">
+        <label class="label-spacer" for="reflection">Reflection</label>
+        <textarea name="reflection" class="text-area form-text-area" cols="30" rows="5" placeholder="What did you learn from this bug?"></textarea>
+      </div>
       <fieldset id="tech-list">      
         <legend>Related Technologies</legend>  
         <% technologies.forEach(technology => { %>
