@@ -8,7 +8,7 @@ The app also allows users to view other users' profiles which contain a list of 
 
 ## Getting Started
 ## [Access the app here!](https://bug-reflector.fly.dev/)
-View this project's planning materials [here](https://trello.com/b/nyWyQOFy/bug-reflector)
+View this project's planning materials, wireframes, and ERD diagrams [here](https://trello.com/b/nyWyQOFy/bug-reflector)
 
 ## Attributions
 Bug Reflector uses a bug favicon created by Muhammad Tajujin available from [flaticon](https://www.flaticon.com/free-icon/bug_3024112?term=bug&page=1&position=37&origin=search&related_id=3024112)
