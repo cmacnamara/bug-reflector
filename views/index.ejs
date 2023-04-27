@@ -17,11 +17,11 @@
       <% if (user) { %>
         <div>
           <a href="/auth/logout">
-            <button class="nav-btn" type="submit">Logout</button>
+            <button class="nav-btn btn-landing" type="submit">Logout</button>
           </a>
         </div><br>
         <div>
-          <a href="/posts"><button class="nav-btn">Continue to Posts</button></a>
+          <a href="/posts"><button class="nav-btn btn-landing">Continue to Posts</button></a>
         </div>
       <% } else { %>
         <div id="google-btn">
@@ -36,15 +36,15 @@
             class="g_id_signin right"
             data-type="standard"
             data-size="large"
-            data-theme="outline"
+            data-theme="filled_black"
             data-text="sign_in_with"
-            data-shape="rectangular"
+            data-shape="pill"
             data-logo_alignment="left"
           ></div>
         </div>
         <br>
         <div>
-          <a href="/posts"><button class="nav-btn">Continue as Guest</button></a>
+          <a href="/posts"><button class="nav-btn btn-landing">Continue as Guest</button></a>
         </div>
         <% if (user?.profile.avatar) { %>
           <div>

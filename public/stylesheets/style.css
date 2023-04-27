@@ -377,6 +377,11 @@ p {
   padding: 10px 20px;
 }
 
+.btn-landing {
+  width: 235px;
+  height: 40px;
+}
+
 .nav-btn:hover {
   background-color: #818384;
 }
