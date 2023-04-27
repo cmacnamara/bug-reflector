@@ -4,7 +4,7 @@
 <section class="main-content">
   <div class="content-card">
     <form id="new-post-form" action="/posts" method="POST">
-      <h2 id="create-post-title">Create Post</h2>
+      <h2 id="create-post-title">Create Post as <%= user.profile.name %></h2>
       <input id="summary-input" type="text" name="summary" placeholder="Summary" required>
       <textarea name="mainContent" class="text-area" cols="30" rows="5" placeholder="Describe your bug" required></textarea>
       <p class="bug-resolved-prompt">Did you fix your bug?: <input type="checkbox" name="resolved"></p> 
@@ -12,11 +12,11 @@
       <fieldset id="tech-list">      
         <legend>Related Technologies</legend>  
         <% technologies.forEach(technology => { %>
-          <input type="checkbox" name="technologies" value="<%= technology._id %>"><%= technology.name %><br>
+          <input type="checkbox" name="technologies" value="<%= technology._id %>"> <%= technology.name %><br>
         <% }) %>
       </fieldset>
       <div>
-        <button class="nav-btn" type="submit" >Create Post</button>
+        <button id="save-btn" class="nav-btn" type="submit" >Create Post</button>
       </div>
     </form>  
   </div>

@@ -286,7 +286,7 @@ p {
   margin: 0 0 0 8px;
   background-color: #343536;
   border-radius: 4px;
-  padding: 1px;
+  padding: 2px;
   width: 115px;
   text-align: center;
   font-weight:700;
@@ -383,6 +383,10 @@ p {
 
 .admin-tech-items {
   margin-left: 33px;
+}
+
+#save-btn {
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 965px) {
