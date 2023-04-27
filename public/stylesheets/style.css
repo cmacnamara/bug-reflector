@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans@400..700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -269,23 +269,27 @@ p {
 }
 
 .post-resolved {
-  color: green;
+  color: hsl(120,100%,36.1%);
   font-size: 14px;
   margin: 0 0 0 8px;
   background-color: #343536;
   border-radius: 4px;
   padding: 2px;
   width: 100px;
+  text-align: center;
+  font-weight:700;
 }
 
 .post-unresolved {
-  color: red;
+  color: hsl(0,100%,71.5%);
   font-size: 14px;
   margin: 0 0 0 8px;
   background-color: #343536;
   border-radius: 4px;
-  padding: 2px;
+  padding: 1px;
   width: 115px;
+  text-align: center;
+  font-weight:700;
 }
 
 .post-author {
