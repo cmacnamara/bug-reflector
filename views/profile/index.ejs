@@ -3,39 +3,39 @@
 
 <section class="main-content">
   <% if(posts.length > 0) { %>
-  <h1>Viewing <%= posts[0].owner.name %>'s Profile</h1>
-  <h2 class="profile-posts-title">All Posts</h2>
-  <% posts.forEach(post => { %>
-    <div class="content-card">
-      <div class="post-headline">
-        <div class="comment-pic-and-name">
-          <img class="comment-pic" src="<%= post.owner.avatar %>" alt="Profile picture">  
-          <h3 class="post-author">Posted by <a href="/profiles/<%= post.owner._id %>"><%= post.owner.name %></a> on <%= post.createdAt.toLocaleDateString() %></h3>
+    <h1>Viewing <%= posts[0].owner.name %>'s Profile</h1>
+    <h2 class="profile-posts-title">All Posts</h2>
+    <% posts.forEach(post => { %>
+      <div class="content-card">
+        <div class="post-headline">
+          <div class="comment-pic-and-name">
+            <img class="comment-pic" src="<%= post.owner.avatar %>" alt="Profile picture">  
+            <h3 class="post-author">Posted by <a href="/profiles/<%= post.owner._id %>"><%= post.owner.name %></a> on <%= post.createdAt.toLocaleDateString() %></h3>
+          </div>
+          <% if (post.owner.equals(user?.profile._id)) { %>
+            <div class="post-actions">
+              <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+                <button class="action-btn"><i class="fa-regular fa-trash-can" style="color: #bababa;"></i> Delete</button>
+              </form>
+              <a href="/posts/<%= post._id %>/edit"><button class="action-btn"><i class="fa-regular fa-pen-to-square" style="color: #c4c4c4;"></i> Edit</button></a>
+            </div>
+          <% } %>
         </div>
-        <% if (post.owner.equals(user?.profile._id)) { %>
-        <div class="post-actions">
-          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-            <button class="action-btn"><i class="fa-regular fa-trash-can" style="color: #bababa;"></i> Delete</button>
-          </form>
-          <a href="/posts/<%= post._id %>/edit"><button class="action-btn"><i class="fa-regular fa-pen-to-square" style="color: #c4c4c4;"></i> Edit</button></a>
-        </div>
+        <a href="/posts/<%= post._id %>"><h2 class="post-summary"><%= post.summary %></h2></a>
+        <h3 class="<%= post.resolved ? 'post-resolved' : 'post-unresolved' %>"><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
+        <% if (post.technologies) { %>
+          <p class="tech-list">
+            <% post.technologies.forEach((technology, idx) => { %>
+              <% if (idx < post.technologies.length-1) { %>
+                <%= technology.name %> ·
+              <% } else {%>
+                <%= technology.name %> 
+              <% } %>
+            <% }) %>
+          </p>
         <% } %>
       </div>
-      <a href="/posts/<%= post._id %>"><h2 class="post-summary"><%= post.summary %></h2></a>
-      <h3 class="<%= post.resolved ? 'post-resolved' : 'post-unresolved' %>"><%= post.resolved ? 'Bug resolved!' : 'Bug In Progress' %></h3>
-      <% if (post.technologies) { %>
-        <p class="tech-list">
-          <% post.technologies.forEach((technology, idx) => { %>
-            <% if (idx < post.technologies.length-1) { %>
-              <%= technology.name %> ·
-            <% } else {%>
-              <%= technology.name %> 
-            <% } %>
-          <% }) %>
-        </p>
-      <% } %>
-    </div>
-  <% }) %>
+    <% }) %>
   <% } %>
 </section>
 

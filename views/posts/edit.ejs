@@ -26,7 +26,7 @@
         <% technologies.forEach(technology => { %>
           <input type="checkbox" name="technologies" value="<%= technology._id %>" <%= post.technologies.some(tech => tech.name === technology.name) ? 'checked' : ''%>> <%= technology.name %><br>
         <% }) %>      
-    </fieldset> 
+      </fieldset> 
       <button id="save-btn" class="nav-btn" type="submit">Save Post</button>
     </form>
   </div>

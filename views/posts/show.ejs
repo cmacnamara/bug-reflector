@@ -47,13 +47,11 @@
         <button class="nav-btn" type="submit">Add Comment</button>
       </form>
     </div>
-      <% } else { %>
-        <h3 style="text-align: center;"><a href="/">Log In</a> to leave a comment!</h3>
-        <% } %>
-      <% if (post.comments.length) { %>
-        
+    <% } else { %>
+      <h3 style="text-align: center;"><a href="/">Log In</a> to leave a comment!</h3>
+    <% } %>
+    <% if (post.comments.length) { %> 
       <hr class="comment-divider"><br>
-
       <% post.comments.forEach(comment => { %>
         <div class="comment-headline">
           <div class="comment-pic-and-name">
@@ -73,8 +71,7 @@
         </div>
         <p class="comment-content"><%= comment.content %></p><br>
       <% }) %>
-      <% } %>
-
+    <% } %>
   </div>
 </section>
 
